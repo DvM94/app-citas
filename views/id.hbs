@@ -1,0 +1,17 @@
+<main class="center-normal message window">
+  <h2>{{title}} reserva</h2>
+  <form method="POST" action={{ action }}>
+    <label for="number">Nº de reserva:</label>
+    <input type="number" id="number" name="number">
+    {{#if errorId}}
+    <div class="error">Su número de reserva no existe</div>
+    {{/if}}
+    {{#if errorHour}}
+    <div class="error">No puede modificar su reserva con menos de 24 h de antelación</div>
+    {{/if}}
+    <div class="buttons">
+      <a href="/" class="button back">Volver</a>
+      <input type="submit" value="{{title}} reserva" class="go">
+    </div>
+  </form>
+</main>

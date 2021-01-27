@@ -1,0 +1,15 @@
+<main class="center-normal message window">
+  <p>{{user.name}}, aquí están los datos de tu reserva.</p>
+  <p>El día {{user.date}} a las {{user.hour}}</p>
+  <canvas id="canvas"></canvas>
+  <script src="/js/qrcode/build/qrcode.min.js"></script>
+  <script>
+    QRCode.toCanvas(document.getElementById('canvas'), '{{user.name}}, tu reserva es el día {{user.date}} a las {{user.hour}}', function (error) {
+      if (error) console.error(error);
+    })
+  </script>
+  <p>Número de reserva: {{user.id}}</p>
+  <div class="buttons">
+    <a href="/" class="button back">Inicio</a>
+  </div>
+</main>

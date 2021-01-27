@@ -1,0 +1,11 @@
+<main class="center-normal message window">
+  <p>{{user.name}}, ¿De verdad quieres eliminar la reserva del día {{user.date}} a las {{user.hour}}?</p>
+  <form method="POST" action="/citas/cancelado">
+    <label for="number">Nº de reserva:</label>
+    <input type="number" id="number" name="number" value="{{ user.id }}" readonly>
+    <div class="buttons">
+      <a href="/" class="button back">No</a>
+      <input type="submit" value="Si" class="go">
+    </div>
+  </form>
+</main>

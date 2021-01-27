@@ -1,0 +1,76 @@
+a{
+  text-decoration: none;
+  color: $White;
+}
+
+.center-normal,.center-long{
+  transform: translate(-50%,-45%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+}
+
+.buttons{
+  width: 100%;
+  margin: 16px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error{
+  color: $Red;
+}
+
+.message{
+  margin: 0 auto;
+  width: 80%;
+  max-width: 400px;
+}
+
+input[type="submit"]{
+  margin: 5px 10px;
+  color: $White;
+  border: 2px solid $White;
+  border-radius: 25px;
+  height: 30px;
+  box-shadow: 4px 4px 2px $DarkGrey;
+  &.go{
+    background-color: $Red;
+  }
+  &.back{
+    background-color: $DarkGrey;
+  }
+}
+
+input[type="text"],input[type="tel"],input[type="email"],input[type="number"]{
+  text-align: center;
+  margin: 5px 0;
+  width: 240px;
+  border: none;
+  border-bottom: 2px solid $White;
+  background: none;
+  color: $LightGrey;
+}
+
+input[type="number"]{
+  width: 150px;
+}
+
+.button{
+  padding: 4px 5px 0 5px;
+  margin: 5px 10px;
+  color: $White;
+  border: 2px solid $White;
+  border-radius: 25px;
+  height: 30px;
+  box-shadow: 4px 4px 2px $DarkGrey;
+}
+
+.go{
+  background-color:$Red;
+}
+.back{
+  background-color: $DarkGrey;
+}

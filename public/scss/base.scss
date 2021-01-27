@@ -1,0 +1,20 @@
+@font-face{
+  font-family: "rolling";
+  src: url("../fonts/royalacid.ttf");
+}
+
+$Red:#A80000;
+$DarkGrey:#444;
+$LightGrey:#888;
+$Black:black;
+$White:white;
+
+//Archivos importados
+
+@import "./components/classes";
+@import "./components/structures";
+@import "./components/special-classes";
+
+//Versión ordenador
+
+@import "./components/computer";

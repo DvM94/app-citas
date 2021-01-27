@@ -1,0 +1,41 @@
+
+@media (min-width: 600px) {
+  body{
+    background-image: url("../img/fondo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  header{
+    border-bottom: 3px solid $White;
+  }
+  .window{
+    margin: 15px auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 60%;
+    background-color: $Black;
+    border: 2px solid $White;
+    border-radius: 0 60px 0 60px;
+    box-shadow: 10px 10px 5px $Black;
+  }
+}
+
+@media (max-height: 650px) {
+  .center-long{
+    top: 58%;
+  }
+}
+
+@media (min-width: 900px) {
+  .list{
+    width: 80%;
+    .booked{
+    display: flex;
+    justify-content: space-around;
+      &-cards{
+        width: 350px;
+      }
+    }
+  }
+}

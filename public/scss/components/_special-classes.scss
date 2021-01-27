@@ -1,0 +1,63 @@
+.main{
+  padding: 20px 0;
+  width: 300px;
+  &-logo{
+    width: 250px;
+  }
+  &-buttons{
+    flex-direction: column;
+    a{
+      width: 160px;
+    }
+  }
+  p{
+    font-weight: bold;
+  }
+}
+
+.form{
+  width: 310px;
+  text-align: right;
+  margin: 0 auto;
+  padding-top: 20px;
+  .hours{
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    p{
+      margin: 5px;
+      padding: 4px;
+      border: 2px solid $White;
+      border-radius: 0 10px 0 10px;
+      background-color: $DarkGrey;
+    }
+  }
+  .buttons{
+    margin-bottom: 30px;
+  }
+}
+
+.list{
+  margin: 0 auto;
+  width: 300px;
+  h2{
+    font-size: 1.25em;
+    color: $LightGrey;
+  }
+  h3{
+    font-size: 1.25em;
+  }
+  .card{
+    margin: 15px auto;
+    width: 280px;
+    border: 2px solid $White;
+    border-radius: 0 20px 0 20px;
+    background-color: $LightGrey;
+    &-new{
+      background-color: $DarkGrey;
+    }
+  }
+  .buttons{
+    margin-bottom: 30px;
+  }
+}

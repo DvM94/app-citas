@@ -1,0 +1,17 @@
+<main class="center-normal message window">
+    <h2>{{title}} reservas</h2>
+ <form method="POST" action="/citas/consultado">
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email">
+  {{#if error}}
+  <div class="error">No hay reservas asociadas a este email</div>
+  {{/if}}
+  {{#if resolve}}
+  <div class="message">Le hemos enviado un correo para poder ver sus reservas</div>
+  {{/if}}
+  <div class="buttons">
+    <a href="/" class="button back">Volver</a>
+    <input type="submit" value="Consultar" class="go">
+  </div>
+</form> 
+</main>

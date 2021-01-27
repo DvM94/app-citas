@@ -1,0 +1,67 @@
+<main class="window">
+  <form method="POST" action={{ action }} class="form">
+    {{#if id}}
+    <div>
+      <label for="number">Reserva:</label>
+      <input type="text" id="number" name="number" value="{{ user.id }}" readonly>
+    </div>
+    {{/if}}
+    <div>
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" value="{{ user.name }}">
+    </div>
+    {{#if errors.name}}
+    <div class="error">El nombre está mal escrito</div>
+    {{/if}}
+    <div>
+      <label for="phone">Teléfono:</label>
+      <input type="tel" id="phone" name="phone" value="{{ user.phone }}">
+    </div>
+    {{#if errors.phone}}
+    <div class="error">El teléfono está mal escrito</div>
+    {{/if}}
+    <div>
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" value="{{ user.email }}">
+    </div>
+    {{#if errors.email}}
+    <div class="error">El email está mal escrito</div>
+    {{/if}}
+    <div>
+      <label for="date">Fecha:</label>
+      <input type="date" id="date" name="date" readonly>
+    </div> 
+    <div>
+      <label for="hour">Hora:</label>
+      <input type="text" id="hour" name="hour" value="{{ user.hour }}" readonly>
+    </div>
+    {{#if errors.hour}}
+    <div class="error">Selecciona una hora</div>
+    {{/if}}
+    <div class="hours"></div>
+    <div class="buttons">
+      <a href="/" class="button back">Volver</a>
+      <input type="submit" value="Enviar" class="go">
+    </div>
+  </form>
+</main>
+
+
+
+<script>
+  const myInput = document.querySelector("#date");
+  const fp = flatpickr(myInput, {
+    inline: true,
+    dateFormat: "d-m-Y",
+    minDate: "today",
+    defaultDate: "{{ user.date }}",
+    maxDate: new Date().fp_incr(90),
+    disable: [
+      function (date) { return (date.getDay() === 0 || date.getDay() === 1); },
+      {{#each occupiedDates }}
+      "{{{this}}}",
+    {{/each}}
+    ]
+  });
+</script>
+<script src="/js/scriptform.js"></script>

@@ -1,0 +1,247 @@
+@font-face {
+  font-family: "rolling";
+  src: url("../fonts/royalacid.ttf");
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.center-normal, .center-long {
+  transform: translate(-50%, -45%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+}
+
+.buttons {
+  width: 100%;
+  margin: 16px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error {
+  color: #A80000;
+}
+
+.message {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 400px;
+}
+
+input[type="submit"] {
+  margin: 5px 10px;
+  color: white;
+  border: 2px solid white;
+  border-radius: 25px;
+  height: 30px;
+  box-shadow: 4px 4px 2px #444;
+}
+
+input[type="submit"].go {
+  background-color: #A80000;
+}
+
+input[type="submit"].back {
+  background-color: #444;
+}
+
+input[type="text"], input[type="tel"], input[type="email"], input[type="number"] {
+  text-align: center;
+  margin: 5px 0;
+  width: 240px;
+  border: none;
+  border-bottom: 2px solid white;
+  background: none;
+  color: #888;
+}
+
+input[type="number"] {
+  width: 150px;
+}
+
+.button {
+  padding: 4px 5px 0 5px;
+  margin: 5px 10px;
+  color: white;
+  border: 2px solid white;
+  border-radius: 25px;
+  height: 30px;
+  box-shadow: 4px 4px 2px #444;
+}
+
+.go {
+  background-color: #A80000;
+}
+
+.back {
+  background-color: #444;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial;
+  text-align: center;
+}
+
+header {
+  position: relative;
+  z-index: 10;
+  background-color: black;
+  color: #A80000;
+  width: 100%;
+  font-family: "rolling";
+  font-size: 1em;
+}
+
+header h1 {
+  margin: 0;
+  padding: 10px;
+  text-shadow: 0.03em 0.04em white;
+  position: relative;
+  right: 8px;
+}
+
+header h1 .t {
+  font-size: 1.6em;
+  position: relative;
+  left: 6px;
+  top: 2px;
+}
+
+footer {
+  height: 30px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: 10;
+  position: fixed;
+  bottom: 0;
+  padding-top: 5px;
+}
+
+footer p {
+  margin: 0;
+}
+
+.main {
+  padding: 20px 0;
+  width: 300px;
+}
+
+.main-logo {
+  width: 250px;
+}
+
+.main-buttons {
+  flex-direction: column;
+}
+
+.main-buttons a {
+  width: 160px;
+}
+
+.main p {
+  font-weight: bold;
+}
+
+.form {
+  width: 310px;
+  text-align: right;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.form .hours {
+  display: flex;
+  justify-content: center;
+  height: 40px;
+}
+
+.form .hours p {
+  margin: 5px;
+  padding: 4px;
+  border: 2px solid white;
+  border-radius: 0 10px 0 10px;
+  background-color: #444;
+}
+
+.form .buttons {
+  margin-bottom: 30px;
+}
+
+.list {
+  margin: 0 auto;
+  width: 300px;
+}
+
+.list h2 {
+  font-size: 1.25em;
+  color: #888;
+}
+
+.list h3 {
+  font-size: 1.25em;
+}
+
+.list .card {
+  margin: 15px auto;
+  width: 280px;
+  border: 2px solid white;
+  border-radius: 0 20px 0 20px;
+  background-color: #888;
+}
+
+.list .card-new {
+  background-color: #444;
+}
+
+.list .buttons {
+  margin-bottom: 30px;
+}
+
+@media (min-width: 600px) {
+  body {
+    background-image: url("../img/fondo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  header {
+    border-bottom: 3px solid white;
+  }
+  .window {
+    margin: 15px auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 60%;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 0 60px 0 60px;
+    box-shadow: 10px 10px 5px black;
+  }
+}
+
+@media (max-height: 650px) {
+  .center-long {
+    top: 58%;
+  }
+}
+
+@media (min-width: 900px) {
+  .list {
+    width: 80%;
+  }
+  .list .booked {
+    display: flex;
+    justify-content: space-around;
+  }
+  .list .booked-cards {
+    width: 350px;
+  }
+}
