@@ -6,6 +6,7 @@ let daoCitas = {}
 let bookings = JSON.parse(fs.readFileSync("bookings.json","utf-8"))
 let pendingBookings = JSON.parse(fs.readFileSync('pendingbookings.json', 'utf-8'))
 let oldBookings = JSON.parse(fs.readFileSync('oldbookings.json', 'utf-8'))
+let cancelBookings = JSON.parse(fs.readFileSync('cancelbookings.json', 'utf-8'))
 let realBookings = [...bookings,...pendingBookings]
 let totalBookings = [...bookings,...oldBookings]
 
@@ -123,8 +124,8 @@ daoCitas.modifyBooking=function modifyBooking(user){
 
 daoCitas.removeBooking=function removeBooking(user){
   let index = bookings.findIndex(oldUser=>oldUser.id==user.id)
-  oldBookings.push(user)
-  fs.writeFileSync("oldbookings.json",JSON.stringify(oldBookings),"utf-8")
+  cancelBookings.push(user)
+  fs.writeFileSync("cancelbookings.json",JSON.stringify(cancelBookings),"utf-8")
   bookings.splice(index,1)
   fs.writeFileSync("bookings.json",JSON.stringify(bookings),"utf-8")
 }

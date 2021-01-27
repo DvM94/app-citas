@@ -2,7 +2,8 @@ const fs = require("fs")
 let bookings = JSON.parse(fs.readFileSync("bookings.json","utf-8"))
 let pendingBookings = JSON.parse(fs.readFileSync('pendingbookings.json', 'utf-8'))
 let oldBookings = JSON.parse(fs.readFileSync('oldbookings.json', 'utf-8'))
-let totalBookings = [...bookings,...pendingBookings,...oldBookings]
+let cancelBookings = JSON.parse(fs.readFileSync('cancelbookings.json', 'utf-8'))
+let totalBookings = [...bookings,...pendingBookings,...oldBookings,...cancelBookings]
 
 class UserDate {
 
