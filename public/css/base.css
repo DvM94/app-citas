@@ -135,7 +135,17 @@ footer p {
 }
 
 .main-logo {
+  margin: 0 auto;
   width: 250px;
+  height: 250px;
+  background-image: url("../img/circulo.png");
+  background-size: cover;
+}
+
+.main-logo .stars {
+  animation: rotate 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 .main-buttons {
@@ -148,6 +158,15 @@ footer p {
 
 .main p {
   font-weight: bold;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .form {
