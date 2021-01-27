@@ -1,7 +1,7 @@
 class EmailData {
 
   constructor(user,subject){
-    this.from = "NEGOCIO nombre"
+    this.from = "Twist & Shout Bar"
     this.to = user.email
     this.subject = subject
     this.html = this.setHtml(user,subject)
