@@ -21,7 +21,7 @@ daoCitas.occupiedDates=function occupiedDates(){
         if(date.date==realBookings[i].date)
           occupiedHours.push(realBookings[i].hour)
       }    
-      if(occupiedHours.length==3 && !occupiedDates.includes(date.date))
+      if(occupiedHours.length==5 && !occupiedDates.includes(date.date))
         occupiedDates.push(date.date)
     }
     resolved(occupiedDates)
