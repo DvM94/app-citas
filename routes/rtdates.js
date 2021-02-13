@@ -33,15 +33,15 @@ rtdates.post('/pendiente', (req, res) => {
   const user = new UserDate(req.body)
   if (user.validate().name == true || user.validate().phone == true || user.validate().email == true || user.validate().hour == true) {
     daoCitas.occupiedDates()
-    .then(dates=>{
-      res.render('form', ({
-      title: "Reserva",
-      action: "/citas/pendiente",
-      occupiedDates: dates,
-      errors: user.validate(),
-      user
-      }))
-    })
+      .then(dates => {
+        res.render('form', ({
+          title: "Reserva",
+          action: "/citas/pendiente",
+          occupiedDates: dates,
+          errors: user.validate(),
+          user
+        }))
+      })
   } else {
     let mailOptions = new EmailData(user, "Confirmación de reserva")
     transporter.sendMail(mailOptions, () => {
@@ -63,7 +63,7 @@ rtdates.get("/reservado/:id", (req, res) => {
     })
   }
   if (user == undefined)
-    res.render("notbooked", ({ title: "Sin reserva"}))
+    res.render("notbooked", ({ title: "Sin reserva" }))
   else
     res.render("booked", ({ title: "Reservado", user }))
 })
@@ -90,16 +90,16 @@ rtdates.post("/modificar", (req, res) => {
       errorId: true
     }))
   } else {
-    let timeDifference = functions.checkDates(user.date,user.hour)
+    let timeDifference = functions.checkDates(user.date, user.hour)
     let day = 86400000
-    if(timeDifference > day){
+    if (timeDifference > day) {
       res.render('form', ({
         title: "Modificar",
         user,
         action: "/citas/modificado",
         id: true
       }))
-    }else{
+    } else {
       res.render("id", ({
         title: "Modificar",
         action: "/citas/modificar",
@@ -110,21 +110,21 @@ rtdates.post("/modificar", (req, res) => {
 })
 
 //Validar el formulario y envio de resguardo
-rtdates.post("/modificado",(req,res)=>{
+rtdates.post("/modificado", (req, res) => {
   let id = req.body.number
-  const user = new UserDate(req.body,id)
+  const user = new UserDate(req.body, id)
   if (user.validate().name == true || user.validate().phone == true || user.validate().email == true || user.validate().hour == true) {
     daoCitas.occupiedDates()
-    .then(dates=>{
-      res.render('form', ({
-      title: "Modificar",
-      action: "/citas/modificado",
-      occupiedDates: dates,
-      errors: user.validate(),
-      user,
-      id: true
-      }))
-    })
+      .then(dates => {
+        res.render('form', ({
+          title: "Modificar",
+          action: "/citas/modificado",
+          occupiedDates: dates,
+          errors: user.validate(),
+          user,
+          id: true
+        }))
+      })
   } else {
     let mailOptions = new EmailData(user, "Resguardo de reserva")
     transporter.sendMail(mailOptions, () => {
@@ -153,7 +153,7 @@ rtdates.post("/cancelar", (req, res) => {
 })
 
 //Cancelación realizada
-rtdates.post("/cancelado",(req,res)=>{
+rtdates.post("/cancelado", (req, res) => {
   let id = req.body.number
   let user = daoCitas.searchUserBooked(id)
   daoCitas.removeBooking(user)
@@ -171,38 +171,38 @@ rtdates.get("/consultar/email", (req, res) => {
 })
 
 //
-rtdates.post("/consultado",(req,res)=>{
+rtdates.post("/consultado", (req, res) => {
   let email = req.body.email
   let bookings = daoCitas.searchUserTotal(email)
-  if(bookings[0].length==0&&bookings[1].length==0){
+  if (bookings[0].length == 0 && bookings[1].length == 0) {
     res.render("email", ({
       title: "Consultar",
       error: true
-    }))   
-  }else{
+    }))
+  } else {
     let user = daoCitas.searchUserByEmail(email)
     let mailOptions = new EmailData(user, "Consulta de reservas")
     transporter.sendMail(mailOptions, () => {
       res.render("email", ({
         title: "Consultar",
         resolve: true
-      })) 
+      }))
     })
   }
 })
 
-rtdates.get("/consulta/:id",(req,res)=>{
+rtdates.get("/consulta/:id", (req, res) => {
   let id = req.params.id
   let user = daoCitas.searchUserById(id)
-  if(user==undefined){
+  if (user == undefined) {
     res.render('error')
-  }else{
+  } else {
     let bookings = daoCitas.searchUserTotal(user.email)
     let listBookings = false
     let listOldBookings = false
-    if(bookings[0].length!=0)
+    if (bookings[0].length != 0)
       listBookings = true
-    if(bookings[1].length!=0)
+    if (bookings[1].length != 0)
       listOldBookings = true
     res.render("list", ({
       title: "Reservas",
@@ -211,7 +211,7 @@ rtdates.get("/consulta/:id",(req,res)=>{
       bookings: bookings[0],
       listOldBookings,
       oldBookings: bookings[1]
-    })) 
+    }))
   }
 })
 
