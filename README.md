@@ -23,4 +23,4 @@ Aplicación para reservar mesa en un bar. El usuario puede crear una reserva, mo
 * [Flatpickr](https://flatpickr.js.org/)
 * [Nodemailer](https://nodemailer.com/about/)
 
-Proyecto realizado en colaboración de [Nuria Martinez](https://github.com/nurimartinez)
+Proyecto realizado en colaboración de [Nuria Martinez](https://github.com/nurimartinez){:target="_blank"}
