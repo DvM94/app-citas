@@ -14,6 +14,9 @@ La aplicación sigue los principios del diseño responsive, está en formato ord
 <p align="center">
 <img src="public/img/readme.jpg" width="700">
 </p>
+<p align="center">
+<img src="public/img/readme.png" width="700">
+</p>
 
 ## Caracerísticas
 
